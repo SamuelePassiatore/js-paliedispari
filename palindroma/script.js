@@ -15,3 +15,7 @@ Creare una funzione per capire se la parola inserita è palindroma
 3 - Creo una funzione che deve restituire un valore booleano (vero se palindroma, falso se non);
 4 - Stampo un messaggio sull'esito del controllo;
 */
+
+// 1 - Prendo gli elementi dal DOM;
+const inputWord = document.getElementById('input-word');
+const form = document.getElementById('form');
