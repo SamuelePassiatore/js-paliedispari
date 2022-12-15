@@ -55,15 +55,14 @@ event.preventDefault();
     // 3c - Svuoto il campo della parola;
     inputWord.value = '';
 
+    let content = "La parola non è palindroma!";
     // 3d - Controllo se la parola è palindroma
     if (isPalindrome(userWord)) {
-    console.log("La parola è palindroma!");
-    } else {
-    console.log("La parola non è palindroma.");
-    }
+    content = "La parola è palindroma!";
+    } 
 
     // 3e - Stampo un messaggio sull'esito del controllo;
-
+    answer.innerHTML = `<strong>${content}</strong>`;
 });
 
 
