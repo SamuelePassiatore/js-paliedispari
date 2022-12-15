@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pari e dispari</title>
+    <!-- Bootstrap -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css' integrity='sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==' crossorigin='anonymous'/>
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Script -->
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <h1>Pari e dispari</h1>
+    <form id="form" class="py-2">
+        <input type="number" id="number" min="1" max="5" required class="mb-3">
+        <input type="submit" value="Invia">
+        <br>
+        <label for="numbers"><strong>Scegli:</strong></label>
+        <select name="numbers" id="number-type">
+            <option value="even">Pari</option>
+            <option value="odd">Dispari</option>
+        </select>
+    </form>
+    <div id="player-number"></div>
+    <div id="cpu-number"></div>
+    <div id="winner"></div>
+</body>
+</html>
