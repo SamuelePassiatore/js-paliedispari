@@ -28,17 +28,14 @@ const answer = document.getElementById('answer');
 function isPalindrome(word){
 
     word = word.trim().toLowerCase();
-
     let reversedWord = "";
     // 2a - Inverto la parola attraverso un ciclo for;
     for (let i = word.length - 1; i >= 0; i--){
         reversedWord += word[i];
     }
-    
     // 2b - Controllo se la parola invertita è uguale alla parola inserita dall'utente;
     return reversedWord === word;
 }
-
 
 // 3 - Aggancio l'event listener al submit del form;
 form.addEventListener('submit', function(event){
