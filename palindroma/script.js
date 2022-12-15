@@ -8,12 +8,15 @@ Creare una funzione per capire se la parola inserita è palindroma
 
 /*
 1 - Prendo gli elementi dal DOM;
-2 - Aggancio l'event listener al input verifica;
-    2a - Recupero valore dell'input;
-    2b - Validazione dell'input;
-    2c - Svuoto il campo del nome;
-3 - Creo una funzione che deve restituire un valore booleano (vero se palindroma, falso se non);
-4 - Stampo un messaggio sull'esito del controllo;
+2 - Creo una funzione che deve restituire un valore booleano (vero se palindroma, falso se non);
+    2a - Inverto la parola attraverso un ciclo for;
+    2b - Controllo se la parola invertita è uguale alla parola inserita dall'utente;
+3 - Aggancio l'event listener al input verifica;
+    3a - Recupero valore dell'input;
+    3b - Validazione dell'input;
+    3c - Svuoto il campo del nome;
+    3d - Controllo se la parola è palindroma;
+    3e - Stampo un messaggio sull'esito del controllo;
 */
 
 // 1 - Prendo gli elementi dal DOM;
@@ -21,20 +24,49 @@ const inputWord = document.getElementById('input-word');
 const form = document.getElementById('form');
 const answer = document.getElementById('answer');
 
-// 2 - Aggancio l'event listener al submit del form;
+// 2 - Creo una funzione che deve restituire un valore booleano (vero se palindroma, falso se non);
+function isPalindrome(word){
+
+    let reversedWord = "";
+    // 2a - Inverto la parola attraverso un ciclo for;
+    for (let i = word.length - 1; i >= 0; i--){
+        reversedWord += word[i];
+    }
+    
+    // 2b - Controllo se la parola invertita è uguale alla parola inserita dall'utente;
+    return reversedWord === word;
+}
+
+
+// 3 - Aggancio l'event listener al submit del form;
 form.addEventListener('submit', function(event){
 event.preventDefault();
 
-    // 2a - Recupero valore dell'input;
+    // 3a - Recupero valore dell'input;
     const userWord = inputWord.value.trim();
     console.log(userWord);
 
-    // 2b - Validazione dell'input;
+    // 3b - Validazione dell'input;
     if (!isNaN(userWord)){
         alert('Devi inserire parola, non un numero!');
         return;
     }
 
-    // 2c - Svuoto il campo della parola;
+    // 3c - Svuoto il campo della parola;
     inputWord.value = '';
+
+    // 3d - Controllo se la parola è palindroma
+    if (isPalindrome(userWord)) {
+    console.log("La parola è palindroma!");
+    } else {
+    console.log("La parola non è palindroma.");
+    }
+
+    // 3e - Stampo un messaggio sull'esito del controllo;
+
 });
+
+
+
+
+
