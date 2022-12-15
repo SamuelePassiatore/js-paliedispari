@@ -27,6 +27,8 @@ const answer = document.getElementById('answer');
 // 2 - Creo una funzione che deve restituire un valore booleano (vero se palindroma, falso se non);
 function isPalindrome(word){
 
+    word = word.trim().toLowerCase();
+
     let reversedWord = "";
     // 2a - Inverto la parola attraverso un ciclo for;
     for (let i = word.length - 1; i >= 0; i--){
@@ -48,7 +50,7 @@ event.preventDefault();
 
     // 3b - Validazione dell'input;
     if (!isNaN(userWord)){
-        alert('Devi inserire parola, non un numero!');
+        alert('Devi inserire almeno una lettera!');
         return;
     }
 
