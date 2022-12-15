@@ -19,6 +19,7 @@ Creare una funzione per capire se la parola inserita è palindroma
 // 1 - Prendo gli elementi dal DOM;
 const inputWord = document.getElementById('input-word');
 const form = document.getElementById('form');
+const answer = document.getElementById('answer');
 
 // 2 - Aggancio l'event listener al submit del form;
 form.addEventListener('submit', function(event){
@@ -33,4 +34,7 @@ event.preventDefault();
         alert('Devi inserire parola, non un numero!');
         return;
     }
+
+    // 2c - Svuoto il campo della parola;
+    inputWord.value = '';
 });
