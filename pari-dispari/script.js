@@ -22,10 +22,21 @@ Dichiariamo chi ha vinto.
 */
 
 // 1 - Prendo gli elementi dal DOM;
-const playerNumber = document.getElementById('player-number');
-const cpuNumber = document.getElementById('cpu-number');
+const player = document.getElementById('player');
+const cpu = document.getElementById('cpu');
 const sum = document.getElementById('sum');
 const winner = document.getElementById('winner');
+
+// 2 - Creo una funzione per generare un numero random;
+function getRandomNumber(min, max){
+    max++;
+    const randomNumber = Math.floor(Math.random() * (max - min)) + min;
+    return randomNumber;
+}
+const playerNumber = getRandomNumber(1, 5);
+console.log(playerNumber);
+
+
 
 
 
