@@ -29,14 +29,6 @@ const cpu = document.getElementById('cpu');
 const sum = document.getElementById('sum');
 const winner = document.getElementById('winner');
 
-// 2 - Creo una funzione per generare un numero random;
-function getRandomNumber(min, max){
-    max++;
-    const randomNumber = Math.floor(Math.random() * (max - min)) + min;
-    return randomNumber;
-}
-const cpuNumber = getRandomNumber(1, 5);
-console.log(cpuNumber);
 
 // 3 - Creo una funzione che stabilisce se un numero è pari o dispari;
 function isEven(number){
@@ -51,9 +43,18 @@ console.log(answer);
 // 4 - Aggancio l'event listener al input invia;
 form.addEventListener('submit', function(event){
 event.preventDefault();
+
+// 2 - Creo una funzione per generare un numero random;
+    function getRandomNumber(min, max){
+        max++;
+        const randomNumber = Math.floor(Math.random() * (max - min)) + min;
+        return randomNumber;
+    }
+    const cpuNumber = parseInt(getRandomNumber(1, 5));
+    console.log(cpuNumber);
     
     // 4a - Recupero valore dell'input;
-    const playerNumber = inputPlayer.value.trim();
+    const playerNumber = parseInt(inputPlayer.value.trim());
     console.log(playerNumber);
     
     // 4b - Validazione dell'input;
@@ -64,7 +65,20 @@ event.preventDefault();
 
     // 4c - Svuoto il campo del numero;
     inputPlayer.value = '';
+
+    // 4d - Sommo i numeri;
+    const sumNumber = cpuNumber + playerNumber;
+    console.log(sumNumber);
+
+    // 4e - Stampo in pagina;
+    player.innerHTML = '<strong>Numero Utente: </strong>' + playerNumber;
+    cpu.innerHTML = '<strong>Numero Cpu: </strong>' + cpuNumber;
+    sum.innerHTML = '<strong>Somma: </strong>' + sumNumber;
     }); 
+
+
+
+
 
     
 
