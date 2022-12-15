@@ -17,13 +17,15 @@ Dichiariamo chi ha vinto.
     4a - Recupero valore dell'input;
     4b - Validazione dell'input;
     4c - Svuoto il campo del numero;
-5 - Sommo i numeri;
-6 - Stampo in pagina;
+    4d - Sommo i numeri;
+    4e - Stampo in pagina;
+    4f - Determina il vincitore e stampa in pagina;
 */
 
 // 1 - Prendo gli elementi dal DOM;
 const form = document.getElementById('form');
 const inputPlayer = document.getElementById('input-number');
+const numberType = document.getElementById('number-type');
 const player = document.getElementById('player');
 const cpu = document.getElementById('cpu');
 const sum = document.getElementById('sum');
@@ -36,9 +38,6 @@ function isEven(number){
     let result = number % 2 === 0 ? true : false;
     return result;
 }
-
-const answer = isEven(4);
-console.log(answer);
 
 // 4 - Aggancio l'event listener al input invia;
 form.addEventListener('submit', function(event){
@@ -56,6 +55,10 @@ event.preventDefault();
     // 4a - Recupero valore dell'input;
     const playerNumber = parseInt(inputPlayer.value.trim());
     console.log(playerNumber);
+
+    // Recupero valore della select;
+    const userChoice = numberType.value;
+    console.log(userChoice);
     
     // 4b - Validazione dell'input;
     if (isNaN(playerNumber) || !playerNumber || playerNumber <= 0 || playerNumber > 5){
@@ -74,6 +77,20 @@ event.preventDefault();
     player.innerHTML = '<strong>Numero Utente: </strong>' + playerNumber;
     cpu.innerHTML = '<strong>Numero Cpu: </strong>' + cpuNumber;
     sum.innerHTML = '<strong>Somma: </strong>' + sumNumber;
+
+    // 4f - Determina il vincitore;
+    let result = '';
+    if (isEven(sumNumber) && userChoice === 'pari') {
+        result = "Vince l'utente!";
+    } else if (!isEven(sumNumber) && userChoice === 'dispari') {
+        result = "Vince l'utente!";
+    } else {
+        result = "Vince il computer!";
+    }
+    console.log(result);
+
+    // 3f - Stampo in pagina il vincitore;
+    winner.innerHTML = `<strong>${result}</strong>`;
     }); 
 
 
