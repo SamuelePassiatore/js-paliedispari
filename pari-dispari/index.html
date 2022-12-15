@@ -13,16 +13,21 @@
     <script defer src="script.js"></script>
 </head>
 <body>
+    <!-- Titolo -->
     <h1>Pari e dispari</h1>
+    <!-- Form -->
     <form id="form" class="py-2">
+        <!-- Inputs -->
         <input type="number" id="input-number" min="1" max="5" required class="mb-3">
         <input type="submit" value="Invia" class="me-3">
         <label for="numbers"><strong>Scegli:</strong></label>
+        <!-- Select -->
         <select name="numbers" id="number-type">
             <option value="pari">Pari</option>
             <option value="dispari">Dispari</option>
         </select>
     </form>
+    <!-- Results -->
     <div id="player"></div>
     <div id="cpu"></div>
     <div id="sum"></div>

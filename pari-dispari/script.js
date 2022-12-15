@@ -32,10 +32,8 @@ const cpu = document.getElementById('cpu');
 const sum = document.getElementById('sum');
 const winner = document.getElementById('winner');
 
-
 // 3 - Creo una funzione che stabilisce se un numero è pari o dispari;
 function isEven(number){
-
     let result = number % 2 === 0 ? true : false;
     return result;
 }
@@ -92,7 +90,6 @@ event.preventDefault();
 
     // 4g - Stampo in pagina il vincitore;
     winner.innerHTML =`<strong>Esito: </strong><strong class="text-danger">${result}</strong>`;
-
     }); 
 
 
