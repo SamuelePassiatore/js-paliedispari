@@ -22,6 +22,8 @@ Dichiariamo chi ha vinto.
 */
 
 // 1 - Prendo gli elementi dal DOM;
+const form = document.getElementById('form');
+const inputPlayer = document.getElementById('input-number');
 const player = document.getElementById('player');
 const cpu = document.getElementById('cpu');
 const sum = document.getElementById('sum');
@@ -45,6 +47,20 @@ function isEven(number){
 
 const answer = isEven(4);
 console.log(answer);
+
+// 4 - Aggancio l'event listener al input invia;
+form.addEventListener('submit', function(event){
+event.preventDefault();
+    
+    // 4a - Recupero valore dell'input;
+    const playerNumber = inputPlayer.value.trim();
+    console.log(playerNumber);
+    
+   
+    }); 
+
+    
+
 
 
 
