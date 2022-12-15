@@ -19,7 +19,8 @@ Dichiariamo chi ha vinto.
     4c - Svuoto il campo del numero;
     4d - Sommo i numeri;
     4e - Stampo in pagina;
-    4f - Determina il vincitore e stampa in pagina;
+    4f - Determina il vincitore;
+    4g - Stampa il pagina il vincitore;
 */
 
 // 1 - Prendo gli elementi dal DOM;
@@ -89,8 +90,9 @@ event.preventDefault();
     }
     console.log(result);
 
-    // 3f - Stampo in pagina il vincitore;
-    winner.innerHTML = `<strong>${result}</strong>`;
+    // 4g - Stampo in pagina il vincitore;
+    winner.innerHTML =`<strong>Esito: </strong><strong class="text-danger">${result}</strong>`;
+
     }); 
 
 
