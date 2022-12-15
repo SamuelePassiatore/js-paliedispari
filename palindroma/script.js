@@ -24,5 +24,7 @@ const form = document.getElementById('form');
 form.addEventListener('submit', function(event){
 event.preventDefault();
 
-
+    // 2a - Recupero valore dell'input;
+    const userWord = inputWord.value.trim();
+    console.log(userWord);
 });
