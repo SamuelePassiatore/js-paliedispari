@@ -61,7 +61,9 @@ event.preventDefault();
         alert('Devi inserire un numero tra 1 e 5!');
         return;
     }
-   
+
+    // 4c - Svuoto il campo del numero;
+    inputPlayer.value = '';
     }); 
 
     
