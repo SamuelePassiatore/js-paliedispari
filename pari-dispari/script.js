@@ -33,8 +33,18 @@ function getRandomNumber(min, max){
     const randomNumber = Math.floor(Math.random() * (max - min)) + min;
     return randomNumber;
 }
-const playerNumber = getRandomNumber(1, 5);
-console.log(playerNumber);
+const cpuNumber = getRandomNumber(1, 5);
+console.log(cpuNumber);
+
+// 3 - Creo una funzione che stabilisce se un numero è pari o dispari;
+function isEven(number){
+
+    let result = number % 2 === 0 ? true : false;
+    return result;
+}
+
+const answer = isEven(4);
+console.log(answer);
 
 
 
