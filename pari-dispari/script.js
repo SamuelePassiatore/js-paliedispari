@@ -21,5 +21,11 @@ Dichiariamo chi ha vinto.
 6 - Stampo in pagina;
 */
 
+// 1 - Prendo gli elementi dal DOM;
+const playerNumber = document.getElementById('player-number');
+const cpuNumber = document.getElementById('cpu-number');
+const sum = document.getElementById('sum');
+const winner = document.getElementById('winner');
+
 
 
