@@ -46,7 +46,7 @@ event.preventDefault();
     console.log(userWord);
 
     // 3b - Validazione dell'input;
-    if (!isNaN(userWord) || !userWord || userWord.length > 1){
+    if (!isNaN(userWord)){
         alert('Devi inserire almeno una lettera!');
         return;
     }
